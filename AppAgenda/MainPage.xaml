@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAgenda.MainPage">
+
+
+    <Grid>
+        <StackLayout>
+                <!-- Titulo -->
+            <StackLayout Padding="80" VerticalOptions="Start" HorizontalOptions="Center">
+                <Label Text="login" TextTransform="Uppercase" FontSize="Title" TextColor="Black" FontAttributes="Bold"></Label>
+            </StackLayout>
+
+            <!-- Tela de login -->
+            <StackLayout>
+                <Frame BackgroundColor="Transparent" Margin="20">
+                    <StackLayout>
+                        <Label Text="E-mail" FontSize="Body" TextColor="Black" HorizontalOptions="Start"></Label>
+                        <Entry x:Name="TXTEmail" Keyboard="Email" ReturnType="Next" ClearButtonVisibility="WhileEditing"></Entry>
+                        <Label Text="Senha" FontSize="Body" TextColor="Black" HorizontalOptions="Start"></Label>
+                        <Entry x:Name="TXTSenha" Keyboard="Default" ReturnType="Done" IsPassword="True" ClearButtonVisibility="WhileEditing"></Entry>
+                    </StackLayout>
+                </Frame>
+                <Button x:Name="BTNLogar" 
+                        Text="Logar" 
+                        BackgroundColor="Black" 
+                        TextColor="White" 
+                        CornerRadius="20" 
+                        HorizontalOptions="Center"
+                        Clicked="BTNLogar_Clicked"></Button>
+                <Button x:Name="BTNCriar" 
+                        Text="Não tem conta, criar uma conta"
+                        FontAttributes="Italic"
+                        TextTransform="None"
+                        BackgroundColor="Transparent"
+                        TextColor="gray"
+                        CornerRadius="20"
+                        HorizontalOptions="Center"
+                        Clicked="BTNCriar_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
+
+        <!-- Botão de "Sobre" -->
+        <StackLayout VerticalOptions="End">
+            <Button x:Name="BTNSobre"
+                    Text="Sobre"
+                    FontAttributes="Italic"
+                    TextTransform="None"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Center"
+                    Clicked="BTNSobre_Clicked"></Button>
+        </StackLayout>
+        
+        <BoxView x:Name="BVTelaPreta"
+                 Color="Black"
+                 Opacity="0.5"
+                 IsVisible="false"></BoxView>
+        <ActivityIndicator x:Name="ACTRoda"
+                           Color="White"
+                           IsVisible="false"
+                           IsRunning="False"
+                           Scale="0.2"></ActivityIndicator>
+    </Grid>
+      
+</ContentPage>
